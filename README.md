@@ -1,26 +1,18 @@
-# Alarma-para-Puerta
-Alarma para puerta con arduino
-#include "LowPower.h"//Exportación de libreria para poner al arduino en modo sleep
+# AlarmaPuerta
+Practica de arduino alarma para puerta con movimiento
 
-int contacto=2;//Pin asignado al reed switch
-int led=13;//Pin asignado al led
-int bocina=12;//Pin asignado a la bocina
+Introduccion:
 
-void setup() {
-  pinMode (contacto, INPUT);//El reed switch como entrada
-  pinMode(led, OUTPUT);//Led como salida
-  pinMode(bocina,OUTPUT);//Bocina como salida
+Con esta práctica ilustraremos cómo debe estructurar un programa en Arduino, también veremos cómo son las sentencias básicas usadas con esta IDE, cómo cargar nuestro programa a la placa y para finalizar, realizaremos un ejemplo con el que encenderemos leds con Arduino montando nuestro propia alara con sumbador y un led parpadeando, mediante hacercamos un iman, se activa el reed switch .
 
-}
 
-void loop() {
-  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);//Pone a dormir al arduino
- if(digitalRead (contacto)==LOW){//Si el iman se acerca al reed switch
-  digitalWrite(led,LOW);//El led se mantiene apagado
-  digitalWrite(bocina,LOW);//La bocina se mantiene apagada
- }else{//Si el iman esta lejos del reed switch
-  digitalWrite(led,HIGH);//Se enciende el led
-  digitalWrite(bocina,HIGH);//Se enciende la bocina y activa la alarma
- }//Fin del if
+![Imagen Arduino](alarma.jpg "Diagrama")
 
-}//Fin del programa
+
+
+![Imagen Arduino](WP_20180320_09_13_55_Raw.jpg "Foto Practica")
+![Imagen Arduino](WP_20180320_09_14_12_Raw.jpg "Foto Practica")
+
+
+![Imagen Arduino](WP_20180320_09_14_17_Raw.jpg "Foto Practica")
+![Imagen Arduino](WP_20180320_09_14_35_Raw.jpg "Foto Practica")
