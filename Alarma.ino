@@ -5,6 +5,7 @@
  If the magnetic field of the REED SWITCH is interfered with by some signal, it sends a signal to the BUZZER and the LED so that it
  turn on simulating the alarm with sound and light.
 */
+#include "LowPower.h"
 
 int led = 13; //variable of the LED initialized in 13
 int reedswitch = 5; //variable of the REED SWITCH initialized in 5
@@ -25,6 +26,7 @@ in case the REED SWITCH pin is in the HIGH state, change the LED and BUZZER pins
 void loop(){
   val = digitalRead(reedswitch); //the variable "val" take the value of the pin of the REED SWITHC
   if(val == LOW){ //the clausule IF, check if the value of the variable "val" is equal to LOW
+   LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
     digitalWrite(led, HIGH); // then the pin of the LED take the value HIGH
     digitalWrite(buzzer, HIGH); // then the pin of the BUZZER take the value HIGH
     delay(200);  
